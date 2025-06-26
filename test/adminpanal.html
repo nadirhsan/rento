@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Rento</title>
+    <link rel="stylesheet" href="adminplan.css">
+</head>
+<body>
+    <div class="admin-header">
+        <h1>Rento Admin Panel</h1>
+        <button class="add-btn">+ Add New Item</button>
+    </div>
+    <div class="admin-table-container">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="documents/item1.jpg" alt="Item 1" class="admin-thumb"></td>
+                    <td>Item 1</td>
+                    <td>Description of Item 1</td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="documents/item2.jpg" alt="Item 2" class="admin-thumb"></td>
+                    <td>Item 2</td>
+                    <td>Description of Item 2</td>
+                    <td>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (confirm('Are you sure you want to delete this item?')) {
+            this.closest('tr').remove();
+        }
+    });
+});
+
+document.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const row = this.closest('tr');
+        const nameCell = row.children[1];
+        const descCell = row.children[2];
+        const actionsCell = row.children[3];
+
+        // Save original values
+        const origName = nameCell.textContent;
+        const origDesc = descCell.textContent;
+
+        // Replace with input fields
+        nameCell.innerHTML = `<input type="text" value="${origName}" style="width:90%;">`;
+        descCell.innerHTML = `<input type="text" value="${origDesc}" style="width:90%;">`;
+
+        // Change buttons
+        actionsCell.innerHTML = `
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Cancel</button>
+        `;
+
+        actionsCell.querySelector('.save-btn').onclick = function() {
+            nameCell.textContent = nameCell.querySelector('input').value;
+            descCell.textContent = descCell.querySelector('input').value;
+            actionsCell.innerHTML = `
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            `;
+            addRowListeners(row); // Re-attach listeners
+        };
+
+        actionsCell.querySelector('.cancel-btn').onclick = function() {
+            nameCell.textContent = origName;
+            descCell.textContent = origDesc;
+            actionsCell.innerHTML = `
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            `;
+            addRowListeners(row); // Re-attach listeners
+        };
+    });
+});
+
+// Add new item functionality
+document.querySelector('.add-btn').addEventListener('click', function() {
+    const table = document.querySelector('.admin-table tbody');
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <td><img src="documents/item-placeholder.jpg" alt="New Item" class="admin-thumb"></td>
+        <td><input type="text" value="" placeholder="Item Name" style="width:90%;"></td>
+        <td><input type="text" value="" placeholder="Description" style="width:90%;"></td>
+        <td>
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Cancel</button>
+        </td>
+    `;
+    table.prepend(newRow);
+
+    newRow.querySelector('.save-btn').onclick = function() {
+        const name = newRow.children[1].querySelector('input').value || 'New Item';
+        const desc = newRow.children[2].querySelector('input').value || 'No description';
+        newRow.children[1].textContent = name;
+        newRow.children[2].textContent = desc;
+        newRow.children[3].innerHTML = `
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        `;
+        addRowListeners(newRow);
+    };
+
+    newRow.querySelector('.cancel-btn').onclick = function() {
+        newRow.remove();
+    };
+});
+
+// Helper to re-attach listeners after editing
+function addRowListeners(row) {
+    row.querySelector('.edit-btn').onclick = function() {
+        // Simulate click to reuse edit logic
+        this.dispatchEvent(new Event('click'));
+    };
+    row.querySelector('.delete-btn').onclick = function() {
+        if (confirm('Are you sure you want to delete this item?')) {
+            row.remove();
+        }
+    };
+}
+</script>
+</body>
+</html>
