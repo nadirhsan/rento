@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name">
+        <h1>Rento</h1>
+    </div>
+    <div class="signin">
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="full Name" >
+            <input type="text" name="phone" placeholder="Phone Number">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <div class="location-finder">
+                <button onclick="findLocation()">Find My Location</button>
+                <p id="locationResult"></p>
+             </div>
+             <button>KYC UPLOAD (optional)</button>
+            <p>you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            <p class="ald">Already have an account? <a href="login.html">Login</a></p>
+            <button type="submit">Signin</button>
+
+        </form>
+        <script>
+            function findLocation() {
+                const result = document.getElementById('locationResult');
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(
+                            (position) => {
+                                result.textContent = 
+                                     `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+                            },
+                            () => {
+                                 result.textContent = "Unable to retrieve your location.";
+                     }
+                );
+            } else {
+                result.textContent = "Geolocation is not supported by your browser.";
+            }
+        }
+    </script>
+</body>
+</html>
