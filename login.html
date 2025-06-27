@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
     <title>Login</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
             <button type="submit">Login</button>
         </form>
         <p style="margin-top:16px; font-size:0.95rem;">
-            Don't have an account? <a href="signin.html">Sign up</a>
+            Don't have an account? <a href="signup">Sign up</a>
         </p>
     </div>
 </body>

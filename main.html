@@ -1,23 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Rento</title>
 </head>
 <body>
     <nav class="navbar">
         <div class="navdiv">
             <div class="name">
-                <img src="documents/logoomer.png" alt="">
+                <img src="{% static 'documents/logoomer.png' %}" alt="">
                 <h1>Rento</h1>
             </div>
                 <ul>
                     <li><a href="#">CATEGORY</a></li>
-                    <li><a href="Item.html">ITEMS</a></li>
-                    <li><a href="login.html">SIGN IN</a></li>
-                    <button class="btn"><a href="lists.html">LIST_ITEM</a></button>
+                    <li><a href="items">ITEMS</a></li>
+                    <li><a href="login">LOG IN</a></li>
+                    <button class="btn"><a href='listitem'>LIST ITEM</a></button>
                 </ul>
         </div>
     </nav>
@@ -25,9 +26,11 @@
         <H1>Rent Anything, Anytime And Anywhere</H1>
         <p>Find and rent item from people near you</p></div>
         
-    <div class="search-bar">
-    <input type="text" placeholder="Search for items..." />
-    <button type="submit">Search</button>
+    <div>
+        <form class="search-bar" action="#" method="get">
+            <input type="text" placeholder="Search for items..." />
+            <button type="submit">Search</button>
+        </form>
     </div>
 
     <div class="categories">
