@@ -1,0 +1,21 @@
+.HeadText{
+    margin-left: 15px;
+    width: 100%;
+    align-items: center;
+}
+.HeadText p{
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    margin-left: 40%;
+}   
+.HeadText h1{
+    font-size:45px;
+    padding-top: 0%;
+    margin-bottom: 0%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    align-self: center;
+    margin-left: 0%;
+    text-align: center;
+    width: 100%;
+    color: rgb(48, 92, 222);
+}

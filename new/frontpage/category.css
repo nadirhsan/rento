@@ -1,0 +1,17 @@
+.ccategories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.category-list a {
+    text-decoration: none;
+    color: black;
+}
