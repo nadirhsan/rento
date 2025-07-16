@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block csslink %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link 
+rel="stylesheet" 
+href="{{ url_for( 'static', filename='css/item.css' ) }}"
+/>
+
+{% endblock %}
+
+{% block content %}
+<div class="Items">
+        {% for image in rentingadmin. %}
+        <div class="item">
+            <img src="{ }" alt="Item 1">
+            <h2>Item 1</h2>
+            <p>Description of Item 1</p>
+            <button class="btn"><a href="#">Rent Now</a></button>
+        </div>
+        {% endfor %}
+        
+
+        <!-- Add more items as needed -->
+    </div>
+{% endblock %} 

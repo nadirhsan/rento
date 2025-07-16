@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{%block csslink %}
+<link 
+rel="stylesheet" 
+href="{{ url_for( 'static', filename='css/list.css')}}"
+/>
+{% endblock %}
+
+{% block content %}
+    <div >
+        
+        <form class="list item" method="POST" enctype="multipart/form-data">
+            <h1>List Item</h1>
+        <input type="text"placeholder="Person Name" name="renter" id="renter">
+        <input type="number"placeholder="Phone Number" name="phone" id="phone">
+        <input type="text"placeholder="Address" name="address" id="address">
+        <label for="category">category of item</label>
+        <select name="category" id="category">
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Vehicles">Vehicles</option>
+            <option value="Tools">Tools</option>
+            <option value="Sports Equipment">Sports Equipment</option>
+        </select>
+        <input type="text"placeholder="Item Name" name="item_name" id="item_name">
+        <input type="text"placeholder="Item Description" name="item_desc" id="item_desc">
+        <input type="number"placeholder="Item Price" name="price" id="price">
+        <p>Upload Item Images</p>
+        <input type="file"placeholder="Item Image" name="item-image1" id="item-image1">
+        <input type="file"placeholder="Item Image" name="item-image2" id="item-image2">
+        <input type="file"placeholder="Item Image" name="item-image3" id="item-image3">
+        <input type="file"placeholder="Item Image" name="item-image4" id="item-image4">
+        <input type="number"placeholder="Security Depost" name="security_depo" id="security_depo">
+        <button type="submit">List Item</button>
+        </form>
+    </div>
+{% endblock %}

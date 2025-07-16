@@ -1,0 +1,123 @@
+@media (max-width: 600px) {
+    body {
+        padding: 0 4vw;
+    }
+
+    .navbar .navdiv {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btn a{
+        padding-left: 40%;
+    }
+    .HeadText {
+        text-align: left;
+        margin-left: 0;
+        width: 100%;
+
+    }
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul li,
+    .navbar ul button {
+        width: 100%;
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .name {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .name img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .HeadText h1 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-left: 0%;
+    }
+
+    .HeadText p {
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 0%;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width:  100%;
+        box-sizing: border-box;
+    }
+    .search-bar input[type="text"] {
+        padding: 10px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .categories .category-list {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .category-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .feature-item {
+        max-width: 95vw;
+        width: 100%;
+        padding: 16px 8px;
+    }
+
+    .feature-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-item h1 {
+        font-size: 1.1rem;
+    }
+
+    .feature-item p {
+        font-size: 0.95rem;
+    }
+
+    .feature-item .btn {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+    .btn a{
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+/* ...existing code... */

@@ -1,0 +1,97 @@
+
+
+/* Logo/Name styling 
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    padding-bottom: 0%;
+}
+.name h1 {
+    color: #305cde;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    padding-bottom: 0%;
+}
+*/
+/* Signin form container */
+.signin {
+    background: #fff;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(48, 92, 222, 0.08);
+    margin-top: 10%;
+    padding-top: 32px;
+}
+
+/* Form inputs */
+.signin input[type="text"],
+.signin input[type="email"],
+.signin input[type="password"] {
+    width: 90%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: 1px solid #dbe2ef;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f7f9fc;
+    transition: border 0.2s;
+}
+.signin input:focus {
+    border: 1.5px solid #305cde;
+    outline: none;
+}
+.ald{
+    width: 90%;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f7f9fc;
+    transition: border 0.2s;
+}
+/* Buttons */
+.signin button {
+    width: 100%;
+    padding: 12px 0;
+    margin: 12px 0 0 0;
+    background: #305cde;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+.signin button:hover {
+    background: #223e8c;
+}
+
+/* Location finder section */
+.location-finder {
+    margin: 16px 0 0 0;
+    text-align: center;
+}
+.location-finder button {
+    width: auto;
+    padding: 8px 18px;
+    margin-bottom: 8px;
+    background: #4e8cff;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+.location-finder button:hover {
+    background: #305cde;
+}
+#locationResult {
+    color: #305cde;
+    font-size: 0.95rem;
+    margin-top: 6px;
+    min-height: 18px;
+}

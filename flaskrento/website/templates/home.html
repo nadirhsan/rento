@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{% block title %}home{% endblock %}
+
+{% block csslink %}
+    <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/category.css' )}}"
+    />
+    <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/featured.css' )}}"
+    />
+{% endblock %}
+
+{%block content%}
+    <div class="categories">
+        <div class="category-list">
+            <div class="category-item"><a href="#">Electronics</a></div>
+            <div class="category-item"><a href="#">Furniture</a></div>
+            <div class="category-item"><a href="#">Vehicles</a></div>
+            <div class="category-item"><a href="#">Tools</a></div>
+            <div class="category-item"><a href="#">Sports Equipment</a></div>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <img src="#" alt="">
+            <h1>Car for rent</h1>
+            <p>Rent a car for your next trip</p>
+            <button class="btn"><a href="#" id="febu">Rent Now</a></button>
+        </div>
+        <div class="feature-item">
+            <img src="#" alt="">
+            <h1>Camera for rent</h1>
+            <p>Capture your moments with our cameras</p>
+            <button class="btn"><a href="#"id="febu">Rent Now</a></button>
+        </div>
+        <div class="feature-item">
+            <img src="#" alt="">
+            <h1>Bike for rent</h1>
+            <p>Explore the city on two wheels</p>
+            <button class="btn"><a href="#"id="febu">Rent Now</a></button>
+        </div>
+    </div>
+{% endblock%}
